@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMainTour"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uclk.shani.youseelk.Activities.MainTourActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contentFrameMainTour">
+
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <include layout="@layout/app_bar" android:id="@+id/app_bar"/>
+
+        <TextView
+            android:id="@+id/tvStartLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="17dp"
+            android:text="@string/tvStartLoc"
+            android:layout_below="@+id/app_bar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:id="@+id/spinStartLoc"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/tvStartLoc"
+            android:layout_toRightOf="@+id/tvStartLoc"
+            android:layout_toEndOf="@+id/tvStartLoc">
+        </Spinner>
+
+        <TextView
+            android:id="@+id/tvEndLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="15dp"
+            android:text="@string/tvEndLoc"
+            android:layout_below="@+id/cbReturn"
+            android:layout_alignLeft="@+id/cbReturn"
+            android:layout_alignStart="@+id/cbReturn" />
+
+        <Spinner
+            android:id="@+id/spinEndLoc"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvEndLoc"
+            android:layout_alignLeft="@+id/spinStartLoc"
+            android:layout_alignStart="@+id/spinStartLoc">
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/cbReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cbReturn"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            android:layout_below="@+id/tvStartLoc"
+            android:layout_alignLeft="@+id/tvStartLoc"
+            android:layout_alignStart="@+id/tvStartLoc" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:text="@string/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvEndLoc"
+            android:layout_alignLeft="@+id/tvEndLoc"
+            android:layout_alignStart="@+id/tvEndLoc" />
+
+        <Button
+            android:id="@+id/btnFrom"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvDuration"
+            android:layout_alignStart="@+id/tvDuration"
+            android:layout_below="@+id/tvDuration"
+            android:layout_marginTop="11dp"
+            android:drawableLeft="@drawable/ic_date_range"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorAccent"
+            android:text="@string/tvFrom"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnTo"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnFrom"
+            android:layout_alignStart="@+id/btnFrom"
+            android:layout_below="@+id/btnFrom"
+            android:layout_marginTop="7dp"
+            android:text="@string/tvTo"
+            android:drawableLeft="@drawable/ic_date_range"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="5dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvStartTime"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@+id/btnTo"
+            android:layout_alignLeft="@+id/btnTo"
+            android:layout_alignStart="@+id/btnTo"
+            android:layout_marginTop="19dp" />
+
+        <Button
+            android:id="@+id/btnNext2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:text="@string/btnNext2"
+            android:textSize="18sp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/tvStartTime"
+            android:layout_toEndOf="@+id/tvStartTime"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp" />
+
+        <Button
+            android:id="@+id/btnPrev1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnPrev1"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/btnNext2"
+            android:layout_alignBottom="@+id/btnNext2"
+            android:layout_alignLeft="@+id/tvStartTime"
+            android:layout_alignStart="@+id/tvStartTime" />
+
+        <TextView
+            android:id="@+id/tvDisplayFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DD/MM/YYYY"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/btnFrom"
+            android:layout_alignBottom="@+id/btnFrom"
+            android:layout_alignLeft="@+id/spinEndLoc"
+            android:layout_alignStart="@+id/spinEndLoc" />
+
+        <TextView
+            android:id="@+id/tvDisplayTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DD/MM/YYYY"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/btnTo"
+            android:layout_alignBottom="@+id/btnTo"
+            android:layout_alignLeft="@+id/tvDisplayFrom"
+            android:layout_alignStart="@+id/tvDisplayFrom" />
+
+        <Button
+            android:id="@+id/btnAtTime"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvStartTime"
+            android:layout_alignStart="@+id/tvStartTime"
+            android:layout_below="@+id/tvStartTime"
+            android:layout_marginTop="18dp"
+            android:text="@string/btnAtTime"
+            android:drawableLeft="@drawable/ic_time"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/colorAccent"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvDisplayAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HH:MM"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/btnAtTime"
+            android:layout_alignBottom="@+id/btnAtTime"
+            android:layout_alignLeft="@+id/tvDisplayTo"
+            android:layout_alignStart="@+id/tvDisplayTo" />
+
+        </RelativeLayout>
+        </FrameLayout>
+
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/navView"
+            app:itemIconTint="@color/colorAccent"
+            app:headerLayout="@layout/nav_header_nav_drawer"
+            app:menu="@menu/activity_nav_drawer_drawer"/>
+
+</android.support.v4.widget.DrawerLayout>
