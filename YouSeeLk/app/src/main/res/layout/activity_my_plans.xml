@@ -6,7 +6,7 @@
     android:id="@+id/layoutMyPlans"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uclk.shani.youseelk.Activities.MyPlansActivity">
+    tools:context="com.uclk.shani.youseelk.activities.MyPlansActivity">
 
     <FrameLayout
         android:layout_width="match_parent"

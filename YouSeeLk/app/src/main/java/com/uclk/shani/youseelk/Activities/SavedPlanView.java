@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Activities;
+package com.uclk.shani.youseelk.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

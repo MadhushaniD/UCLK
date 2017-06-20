@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Activities;
+package com.uclk.shani.youseelk.activities;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -6,13 +6,13 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,7 +41,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
     Button view;
     private NavigationView nview;
     private DrawerLayout drawerLayout;
-    //Configuration newConfig;
     private ActionBarDrawerToggle drawerToggle;
     private int selectedId;
     private boolean mUserSawDrawer = false;
@@ -75,7 +74,7 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
 
         drawerLayout = (DrawerLayout) findViewById(R.id.layoutMainTour);
 
-        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar,R.string.drawer_open,R.string.drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar, R.string.drawer_open, R.string.drawer_close);
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
@@ -93,7 +92,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
         //Next and Previous Buttons
 
         next2 = (Button) findViewById(R.id.btnNext2);
-        prev1 = (Button) findViewById(R.id.btnPrev1);
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,14 +101,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
-        prev1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent2);
-            }
-        });
 
         //Spinners
         final Spinner s = (Spinner) findViewById(R.id.spinStartLoc);

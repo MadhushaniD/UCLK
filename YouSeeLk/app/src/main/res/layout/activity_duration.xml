@@ -4,65 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uclk.shani.youseelk.Activities.DurationActivity">
+    android:orientation="vertical"
+    tools:context="com.uclk.shani.youseelk.activities.DurationActivity">
 
     <include layout="@layout/app_bar" android:id="@+id/app_bar"/>
 
-    <TextView
-        android:id="@+id/tvAddDuration"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:text="@string/tvAddDuration"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:orientation="vertical"
         android:layout_below="@+id/app_bar"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/bottomButtons"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/tvAddDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvAddDuration"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimaryDark" />
 
-    <Button
-        android:id="@+id/btnPlan"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tvAddDuration"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/tvAddDuration"
-        android:layout_marginBottom="22dp"
-        android:text="@string/btnPlan"
-        android:textSize="18sp"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addedPlaces"
+            android:layout_margin="10dp">
+        </ListView>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPrev2"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvAddDuration"
-        android:layout_alignStart="@+id/tvAddDuration"
-        android:layout_alignTop="@+id/btnPlan"
-        android:text="@string/btnPrev2"
-        android:textSize="18sp"/>
 
-    <TextView
-        android:id="@+id/tvItem1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="30dp"
-        android:text="Kandy"
-        android:layout_below="@+id/tvAddDuration"
-        android:layout_alignLeft="@+id/tvAddDuration"
-        android:layout_alignStart="@+id/tvAddDuration" />
+        android:gravity="right|bottom"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/bottomButtons"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true">
 
-    <TextView
-        android:id="@+id/tvItem2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="14dp"
-        android:text="Kaduwela"
-        android:layout_below="@+id/tvItem1"
-        android:layout_alignLeft="@+id/tvItem1"
-        android:layout_alignStart="@+id/tvItem1" />
+
+
+        <Button
+            android:id="@+id/btnPlan"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btnPlan"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 
 </RelativeLayout>
