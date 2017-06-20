@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Activities;
+package com.uclk.shani.youseelk.activities;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -41,7 +41,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
     Button view;
     private NavigationView nview;
     private DrawerLayout drawerLayout;
-    //Configuration newConfig;
     private ActionBarDrawerToggle drawerToggle;
     private int selectedId;
     private boolean mUserSawDrawer = false;
@@ -93,7 +92,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
         //Next and Previous Buttons
 
         next2 = (Button) findViewById(R.id.btnNext2);
-        prev1 = (Button) findViewById(R.id.btnPrev1);
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,14 +101,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
-        prev1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent2);
-            }
-        });
 
         //Spinners
         final Spinner s = (Spinner) findViewById(R.id.spinStartLoc);

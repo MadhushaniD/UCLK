@@ -5,7 +5,7 @@
     android:id="@+id/layoutMainTour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uclk.shani.youseelk.Activities.MainTourActivity">
+    tools:context="com.uclk.shani.youseelk.activities.MainTourActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -148,17 +148,6 @@
             android:layout_marginLeft="28dp"
             android:layout_marginStart="28dp" />
 
-        <Button
-            android:id="@+id/btnPrev1"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnPrev1"
-            android:textSize="18sp"
-            android:layout_alignBaseline="@+id/btnNext2"
-            android:layout_alignBottom="@+id/btnNext2"
-            android:layout_alignLeft="@+id/tvStartTime"
-            android:layout_alignStart="@+id/tvStartTime" />
 
         <TextView
             android:id="@+id/tvDisplayFrom"
