@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.activities;
+package com.uclk.shani.youseelk.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.uclk.shani.youseelk.adapters.SavedPlansAdapter;
+import com.uclk.shani.youseelk.Adapters.SavedPlansAdapter;
 import com.uclk.shani.youseelk.R;
 
 public class MyPlansActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

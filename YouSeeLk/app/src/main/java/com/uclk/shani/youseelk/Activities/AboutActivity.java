@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.activities;
+package com.uclk.shani.youseelk.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

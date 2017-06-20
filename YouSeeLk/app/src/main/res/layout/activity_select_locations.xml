@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:orientation="vertical"
-    tools:context="com.uclk.shani.youseelk.activities.SelectLocationsActivity"
+    tools:context="com.uclk.shani.youseelk.Activities.SelectLocationsActivity"
     android:weightSum="6">
 
     <include layout="@layout/app_bar" android:id="@+id/app_bar"/>
