@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Objects;
+package com.uclk.shani.youseelk.objects;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 

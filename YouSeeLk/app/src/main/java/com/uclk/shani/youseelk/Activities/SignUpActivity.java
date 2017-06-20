@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Activities;
+package com.uclk.shani.youseelk.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.uclk.shani.youseelk.Objects.User;
+import com.uclk.shani.youseelk.objects.User;
 import com.uclk.shani.youseelk.R;
 
 public class SignUpActivity extends AppCompatActivity {

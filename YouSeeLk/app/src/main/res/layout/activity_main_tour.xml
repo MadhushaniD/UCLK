@@ -5,7 +5,7 @@
     android:id="@+id/layoutMainTour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uclk.shani.youseelk.Activities.MainTourActivity">
+    tools:context="com.uclk.shani.youseelk.activities.MainTourActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
