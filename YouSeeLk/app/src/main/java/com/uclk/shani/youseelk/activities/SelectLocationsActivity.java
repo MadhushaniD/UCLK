@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.activities;
+package com.uclk.shani.youseelk.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -38,8 +38,6 @@ public class SelectLocationsActivity extends AppCompatActivity
             add("Anuradhapura");
         }
     };
-
-    List<String> addedLocations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -91,22 +89,14 @@ public class SelectLocationsActivity extends AppCompatActivity
 
             @Override
             public void afterTextChanged(Editable s) {
-
-                if(!addedLocations.contains(s.toString())){
-                    if(locations.contains(s.toString()) && !tags.getTags().contains(s.toString())){
-                        Tag tag = new Tag(s.toString());
-                        tag.tagTextSize=20;
-                        tag.isDeletable=true;
-                        tags.addTag(tag);
-                        Log.w("Here ","Adding tag");
-                        searchView.setText("");
-                    }
-                    addedLocations.add(s.toString());
+                if(locations.contains(s.toString()) && !tags.getTags().contains(s.toString())){
+                    Tag tag = new Tag(s.toString());
+                    tag.tagTextSize=20;
+                    tag.isDeletable=true;
+                    tags.addTag(tag);
+                    Log.w("Here ","Adding tag");
+                    searchView.setText("");
                 }
-                else {
-                    Toast.makeText(getApplicationContext(),"You have already added it!",Toast.LENGTH_LONG).show();
-                }
-
             }
         });
 

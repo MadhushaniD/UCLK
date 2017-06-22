@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.adapters;
+package com.uclk.shani.youseelk.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.uclk.shani.youseelk.activities.SavedPlanView;
+import com.uclk.shani.youseelk.Activities.SavedPlanView;
 import com.uclk.shani.youseelk.R;
 
 
