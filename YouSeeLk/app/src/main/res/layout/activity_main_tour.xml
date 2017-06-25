@@ -5,7 +5,7 @@
     android:id="@+id/layoutMainTour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uclk.shani.youseelk.Activities.MainTourActivity">
+    tools:context="com.uclk.shani.youseelk.activities.MainTourActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -33,16 +33,20 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <Spinner
-            android:id="@+id/spinStartLoc"
+        <AutoCompleteTextView
+            android:id="@+id/atvStartLoc"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp"
+            android:hint="Type here"
+            android:completionThreshold="1"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/tvStartLoc"
             android:layout_alignTop="@+id/tvStartLoc"
             android:layout_toRightOf="@+id/tvStartLoc"
             android:layout_toEndOf="@+id/tvStartLoc">
-        </Spinner>
+        </AutoCompleteTextView>
 
         <TextView
             android:id="@+id/tvEndLoc"
@@ -56,14 +60,18 @@
             android:layout_alignLeft="@+id/cbReturn"
             android:layout_alignStart="@+id/cbReturn" />
 
-        <Spinner
-            android:id="@+id/spinEndLoc"
+        <AutoCompleteTextView
+            android:id="@+id/atvEndLoc"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/tvEndLoc"
-            android:layout_alignLeft="@+id/spinStartLoc"
-            android:layout_alignStart="@+id/spinStartLoc">
-        </Spinner>
+            android:hint="Type here"
+            android:completionThreshold="1"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/tvEndLoc"
+            android:layout_alignLeft="@+id/atvStartLoc"
+            android:layout_alignStart="@+id/atvStartLoc">
+        </AutoCompleteTextView>
 
         <CheckBox
             android:id="@+id/cbReturn"
@@ -148,17 +156,6 @@
             android:layout_marginLeft="28dp"
             android:layout_marginStart="28dp" />
 
-        <Button
-            android:id="@+id/btnPrev1"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnPrev1"
-            android:textSize="18sp"
-            android:layout_alignBaseline="@+id/btnNext2"
-            android:layout_alignBottom="@+id/btnNext2"
-            android:layout_alignLeft="@+id/tvStartTime"
-            android:layout_alignStart="@+id/tvStartTime" />
 
         <TextView
             android:id="@+id/tvDisplayFrom"
@@ -169,8 +166,8 @@
             android:textColor="#000000"
             android:layout_alignBaseline="@+id/btnFrom"
             android:layout_alignBottom="@+id/btnFrom"
-            android:layout_alignLeft="@+id/spinEndLoc"
-            android:layout_alignStart="@+id/spinEndLoc" />
+            android:layout_alignLeft="@+id/atvEndLoc"
+            android:layout_alignStart="@+id/atvEndLoc" />
 
         <TextView
             android:id="@+id/tvDisplayTo"

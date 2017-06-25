@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_weight="1"
     android:orientation="vertical"
-    tools:context="com.uclk.shani.youseelk.Activities.SelectLocationsActivity"
+    tools:context="com.uclk.shani.youseelk.activities.SelectLocationsActivity"
     android:weightSum="6">
 
     <include layout="@layout/app_bar" android:id="@+id/app_bar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:orientation="vertical"
         android:layout_margin="10dp"
         android:layout_weight="5">
@@ -22,29 +23,27 @@
             android:text="@string/tvTitleSelectLoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="3dp"
             android:textSize="18sp"
             android:textColor="@color/colorPrimaryDark" />
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:padding="3dp"
             android:drawableLeft="@drawable/ic_search"
             android:drawableTint="@color/colorAccent"
             android:queryHint="Start typing places"
             android:id="@+id/searchPlaces" />
 
-        <ScrollView
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPlaceCards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:scrollbars="vertical"
-            android:layout_margin="10dp">
-
-            <com.uclk.shani.youseelk.taglib.TagView
-                android:id="@+id/tagGroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </com.uclk.shani.youseelk.taglib.TagView>
-        </ScrollView>
+            android:layout_marginTop="10dp"/>
 
 
     </LinearLayout>
@@ -63,7 +62,8 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:text="@string/btnNext1"
-            android:layout_margin="10dp"/>
+            android:textColor="@color/black"
+            android:layout_margin="5dp"/>
 
     </LinearLayout>
 

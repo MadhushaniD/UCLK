@@ -1,4 +1,4 @@
-package com.uclk.shani.youseelk.Activities;
+package com.uclk.shani.youseelk.activities;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -6,22 +6,24 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -41,7 +43,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
     Button view;
     private NavigationView nview;
     private DrawerLayout drawerLayout;
-    //Configuration newConfig;
     private ActionBarDrawerToggle drawerToggle;
     private int selectedId;
     private boolean mUserSawDrawer = false;
@@ -52,6 +53,7 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
     List<String> list;
     private String[] startingLocations;
     private String[] endingLocations;
+    private String startLocation;
 
     Button to, from, at;
     int yearX,monthX,dayX, yearY, monthY, dayY, hourX,minuteX;
@@ -75,7 +77,7 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
 
         drawerLayout = (DrawerLayout) findViewById(R.id.layoutMainTour);
 
-        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar,R.string.drawer_open,R.string.drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar, R.string.drawer_open, R.string.drawer_close);
 
         drawerLayout.setDrawerListener(drawerToggle);
         drawerToggle.syncState();
@@ -93,7 +95,6 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
         //Next and Previous Buttons
 
         next2 = (Button) findViewById(R.id.btnNext2);
-        prev1 = (Button) findViewById(R.id.btnPrev1);
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,45 +104,57 @@ public class MainTourActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
-        prev1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent2 = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent2);
+        //Autocomplete Textviews
+        final AutoCompleteTextView st = (AutoCompleteTextView) findViewById(R.id.atvStartLoc);
+        this.startingLocations = new String[] {"Kandy", "Colombo", "Kalutara", "Matale", "Kegalle","Kaduwela"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, startingLocations);
+        st.setAdapter(adapter);
+
+        final CheckBox ret = (CheckBox)findViewById(R.id.cbReturn);
+        final AutoCompleteTextView e = (AutoCompleteTextView) findViewById(R.id.atvEndLoc);
+
+        st.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                startLocation = s.toString();
+
             }
         });
 
-        //Spinners
-        final Spinner s = (Spinner) findViewById(R.id.spinStartLoc);
-        this.startingLocations = new String[] {"Kandy", "Colombo", "Kalutara", "Matale", "Kegalle","Kaduwela"};
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, startingLocations);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setAdapter(adapter);
-
-        final CheckBox ret = (CheckBox)findViewById(R.id.cbReturn);
-        final Spinner e = (Spinner)findViewById(R.id.spinEndLoc);
 
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(ret.isChecked()){
-                    //Toast.makeText(MainTourActivity.this,"Checked!",Toast.LENGTH_SHORT).show();
-                    int selected = s.getSelectedItemPosition();
-                    e.setSelection(selected);
-                    e.setEnabled(false);
+
+                    e.setText(startLocation);
+                    e.setFocusable(false);
+                    e.dismissDropDown();
                 }
                 else {
                     e.setEnabled(true);
+                    e.setFocusable(true);
                 }
             }
         });
 
         this.endingLocations = new String[]{"Kandy", "Colombo","Kalutara","Matale","Kegalle","Kaduwela"};
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,endingLocations);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,endingLocations);
         e.setAdapter(adapter1);
 
         //DatePicker
